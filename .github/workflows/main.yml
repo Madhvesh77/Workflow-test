@@ -30,3 +30,4 @@ jobs:
           echo "Get commit SHA of the latest commit:"
           latest_commit_sha=$(echo "$latest_commit" | jq -r '.sha')
           echo "$latest_commit_sha"
+          
