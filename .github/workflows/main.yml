@@ -23,17 +23,17 @@ jobs:
           echo "Get index of the latest commit:"
           index=$(($length - 1))
           
-#          echo "Get context of the latest commit:"
-#          latest_commit=$(jq --argjson index $index '.[$index]' response.json)
-#          echo "$latest_commit"
-#
-#          echo "Get commit message of the latest commit:"
-#          latest_commit_message=$(echo "$latest_commit" | jq -r '.commit.message')
-#          echo "$latest_commit_message"
-#
-#          echo "Get commit SHA of the latest commit:"
-#          latest_commit_sha=$(echo "$latest_commit" | jq -r '.sha')
-#          echo "$latest_commit_sha"
+          echo "Get context of the latest commit:"
+          latest_commit=$(jq --argjson index $index '.[$index]' response.json)
+          echo "$latest_commit"
+
+          echo "Get commit message of the latest commit:"
+          latest_commit_message=$(echo "$latest_commit" | jq -r '.commit.message')
+          echo "$latest_commit_message"
+
+          echo "Get commit SHA of the latest commit:"
+          latest_commit_sha=$(echo "$latest_commit" | jq -r '.sha')
+          echo "$latest_commit_sha"
 
       - name: print gihub.event stuff
         run: |
