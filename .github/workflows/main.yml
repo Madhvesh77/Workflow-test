@@ -38,4 +38,4 @@ jobs:
       - name: print gihub.event stuff
         run: |
           echo "${{ toJson(github.event) }}"
-          echo "pull req = ${{ toJson(github.event.pull_request) }}"
+          echo "pull req = ${{ toJson(github.event.pull_request.commits) }}"
