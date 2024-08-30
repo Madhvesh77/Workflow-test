@@ -9,7 +9,9 @@ jobs:
   GoodJob:
     runs-on: 'ubuntu-latest'
     steps:
-      - name: print gihub.event stuff
+      - name: github event
+        run: echo "${{ github.event }}"
+      - name: print length of commits
         run: |
           echo "${{ toJson(github.event.commits) }}" > commits.json
           length=$(cat commits.json | jq length)
