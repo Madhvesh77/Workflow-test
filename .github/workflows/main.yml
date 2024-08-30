@@ -10,15 +10,5 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - name: print length of commits
-        id: changelog
-        uses: actions/github-script@v6.3.1
-        env:
-          COMMITS: ${{ toJSON(github.event.commits) }}
-        with:
-          script: |
-            const commits = JSON.parse(process.env.COMMITS);
-            var length = 0;
-            for (const commit of commits) {
-             length += 1;
-            }
-            console.log(length);
+        run: |
+          read commits_length <<< $(.github/workflows/commits_count.sh ${{ toJSON(github.event.commits) }})
