@@ -10,7 +10,7 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - name: github event
-        run: echo "${{ github.event }}"
+        run: echo "${{ toJson(github.event) }}"
       - name: print length of commits
         run: |
           echo "${{ toJson(github.event.commits) }}" > commits.json
