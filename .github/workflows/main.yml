@@ -9,8 +9,6 @@ jobs:
   GoodJob:
     runs-on: 'ubuntu-latest'
     steps:
-      - name: github event
-        run: echo "${{ toJson(github.event) }}"
       - name: print length of commits
         run: |
           $length=0
@@ -19,3 +17,4 @@ jobs:
             $length+=1
           }
           echo "github.events.commits length = $length"
+          
