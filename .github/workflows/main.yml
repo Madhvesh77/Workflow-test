@@ -10,11 +10,15 @@ jobs:
     runs-on: 'ubuntu-latest'
     steps:
       - name: print length of commits
-        run: |
-          $length=0
-          $commits = ${{ github.event.commits }}
-          foreach ($commit in $commits) {
-            $length+=1
-          }
-          echo "github.events.commits length = $length"
-          
+        id: changelog
+        uses: actions/github-script@v6.3.1
+        env:
+          COMMITS: ${{ toJSON(github.event.commits) }}
+        with:
+          script: |
+            const commits = JSON.parse(process.env.COMMITS);
+            var length = 0;
+            for (const commit of commits) {
+             length += 1;
+            }
+            console.log(length);
