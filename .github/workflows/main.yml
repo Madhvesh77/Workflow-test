@@ -11,5 +11,5 @@ jobs:
     steps:
       - name: print gihub.event stuff
         run: |
-          echo "event_name  = ${{ toJson(github.event_name) }}"
-          echo "github.events.commits = ${{ toJson(github.event.commits) }}"
+          commits  = ${{ toJson(github.event.commits) }}
+          echo "github.events.commits length = $(jq length $commits)"
