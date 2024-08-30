@@ -13,5 +13,3 @@ jobs:
         run: |
           echo "event_name  = ${{ toJson(github.event_name) }}"
           echo "github.events.commits = ${{ toJson(github.event.commits) }}"
-
-      
