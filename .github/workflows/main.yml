@@ -12,6 +12,6 @@ jobs:
       - name: print gihub.event stuff
         run: |
           echo "event_name  = ${{ toJson(github.event_name) }}"
-          echo "github.events keys = ${{ toJson(github.event) }}" | jq -r 'keys[]'
+          echo "github.events.commits = ${{ toJson(github.event.commits) }}"
 
       
