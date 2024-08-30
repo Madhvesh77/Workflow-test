@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: print gihub.event stuff
         run: |
-          echo "pull req = ${{ toJson(github.event.pull_request.commits) }}"
+          echo "pull req = ${{ toJson(github.event.pull_request) }}"
 
       - name: List commits on the pull request
         run: |
