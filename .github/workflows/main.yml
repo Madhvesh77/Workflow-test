@@ -14,3 +14,4 @@ jobs:
           commits=${{ toJson(github.event.commits) }}
           length=$(jq length $commits)
           echo "github.events.commits length = $length"
+          
