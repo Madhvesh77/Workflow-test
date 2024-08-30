@@ -11,4 +11,4 @@ jobs:
     steps:
       - name: print length of commits
         run: |
-          read commits_length <<< $(.github/workflows/commits_count.sh ${{ toJSON(github.event.commits) }})
+          read commits_length <<< $(.github/workflows/commits_count.sh toJson(${{ toJSON(github.event.commits) }}) )
