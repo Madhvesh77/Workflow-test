@@ -11,6 +11,5 @@ jobs:
     steps:
       - name: print gihub.event stuff
         run: |
-          commits=${{ github.event.commits }} > commits.json
-          length=$(cat commits.json | jq length)
+          length=${{ github.event.commits }} | jq length
           echo "github.events.commits length = $length"
