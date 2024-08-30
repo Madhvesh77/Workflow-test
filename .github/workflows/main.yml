@@ -24,4 +24,4 @@ jobs:
             console.log(length);
       - name: github.event
         run: |
-          echo "${{ toJSON(github.event) }}"
+          echo "${{ toJSON(github) }}"
